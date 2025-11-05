@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Продукция — Inertlab IMU{% endblock %}
+{% block content %}
+<section class="pt-12 sm:pt-16">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold">Линейки IMU</h1>
+        <p class="text-white/70 mt-2">Три серии для разных задач: компактность, универсальность и максимальная точность.</p>
+      </div>
+      <a href="/contact" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-ink-500 hover:bg-ink-600 shadow-glow">Запросить прайс</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for p in products %}
+      <a href="/products/{{ p.slug }}" class="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-white/20 transition block">
+        <div class="text-xs text-ink-300 mb-2">{{ p.series }}</div>
+        <h3 class="text-xl font-semibold mb-1">{{ p.name }}</h3>
+        <p class="text-white/70 text-sm">{{ p.tagline }}</p>
+        <div class="mt-4 text-xs text-white/60">Подробнее →</div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="mt-12 rounded-2xl border border-white/10 bg-white/5 p-6">
+      <h2 class="text-xl font-semibold">Разработка на заказ</h2>
+      <p class="text-white/70 mt-2 text-sm">По вашему техническому заданию мы можем подобрать оптимальную компонентную базу, разработать специализированный инерциальный измерительный модуль (IMU) с заданными точностными характеристиками и обеспечить его серийное производство с эксклюзивной поставкой исключительно вашей компании. </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+

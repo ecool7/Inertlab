@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Inertlab — Инерциальные модули IMU, произведенные в России{% endblock %}</title>
+    <meta name="description" content="Высокоточные инерциальные модули IMU: разработка, производство и интеграция в России. Промышленный уровень, надежность, сервис." />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              ink: {
+                50: '#f2f6ff', 100: '#e6eefc', 200: '#c9d7ff', 300: '#9db5ff', 400: '#6a8fff',
+                500: '#4669ff', 600: '#2e4be6', 700: '#263bb8', 800: '#1f2f8f', 900: '#101a4f'
+              },
+              night: '#0b1220'
+            },
+            boxShadow: {
+              glow: '0 0 40px rgba(70,105,255,0.25)'
+            },
+            backgroundImage: {
+              'grid-radial': 'radial-gradient(circle at 20% 10%, rgba(70,105,255,.2), transparent 40%), radial-gradient(circle at 80% 30%, rgba(17,24,39,.35), transparent 30%), radial-gradient(circle at 50% 80%, rgba(70,105,255,.1), transparent 30%)'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
+  </head>
+  <body class="bg-night text-white font-sans antialiased">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-grid-radial"></div>
+
+    <header class="sticky top-0 z-40 backdrop-blur bg-night/60 border-b border-white/5">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-[5.33rem] items-center justify-between">
+          <a href="/" class="flex items-center gap-3 group">
+            <span class="h-[5rem] w-[5rem] rounded-full bg-white flex items-center justify-center">
+              <img src="{{ url_for('static', filename='assets/logoo111.svg') }}" alt="Inertlab" class="h-[4rem] w-[4rem]" />
+            </span>
+            <span class="text-white/90 group-hover:text-white font-semibold tracking-tight">Inertlab</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8 text-sm">
+            <a href="/products" class="hover:text-white/90 text-white/70">Продукция</a>
+            <a href="/about" class="hover:text-white/90 text-white/70">О компании</a>
+            <a href="/contact" class="hover:text-white/90 text-white/70">Контакты</a>
+          </nav>
+          <a href="/contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ink-500 hover:bg-ink-600 shadow-glow transition">
+            <span>Получить предложение</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-white/5 mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8 text-white/60">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="h-[4.5rem] w-[4.5rem] rounded-full bg-white flex items-center justify-center">
+              <img src="{{ url_for('static', filename='assets/logoo111.svg') }}" class="h-[3.5rem] w-[3.5rem]" alt="Inertlab" />
+            </span>
+            <span class="font-semibold text-white">Inertlab</span>
+          </div>
+          <p class="text-sm">Высокоточные инерциальные модули IMU российского производства. Надёжность, стабильность и инженерный сервис.</p>
+        </div>
+        <div>
+          <h3 class="text-white/80 font-medium mb-3">Навигация</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/" class="hover:text-white">Главная</a></li>
+            <li><a href="/products" class="hover:text-white">Продукция</a></li>
+            <li><a href="/about" class="hover:text-white">О компании</a></li>
+            <li><a href="/contact" class="hover:text-white">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white/80 font-medium mb-3">Контакты</h3>
+          <p class="text-sm">info@inertlab.ru<br/>+7 (000) 000-00-00<br/>Россия</p>
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-white/50">© {{ 2025 }} Inertlab. Все права защищены.</div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>AOS.init({ once: true, duration: 700, easing: 'ease-out' });</script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+  </html>
+
+

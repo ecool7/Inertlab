@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block title %}Inertlab — Российские инерциальные модули IMU для промышленности и робототехники{% endblock %}
+{% block content %}
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 opacity-25">
+      <svg class="w-full h-full" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4669ff"/>
+            <stop offset="100%" stop-color="#111827"/>
+          </linearGradient>
+        </defs>
+        <circle cx="1200" cy="180" r="220" fill="url(#g1)"/>
+        <circle cx="200" cy="700" r="260" fill="url(#g1)"/>
+      </svg>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-16">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-up">
+          <span class="inline-flex items-center gap-2 text-xs rounded-full border border-white/10 bg-white/5 px-3 py-1 text-white/70">Сделано в России</span>
+          <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Инерциальные модули IMU<br/>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-ink-400 to-ink-600">промышленного уровня</span>
+          </h1>
+          <p class="mt-6 text-white/70 text-lg">Высокая точность, температурная стабильность и надежность для робототехники, БПЛА, навигации и тяжелой промышленности. Полная локализация производства и техподдержка.</p>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="/products" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-ink-500 hover:bg-ink-600 shadow-glow transition font-medium">Каталог IMU</a>
+            <a href="/contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 transition font-medium">Получить консультацию</a>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-6 text-white/60 text-sm">
+            <div>
+              <div class="text-2xl font-semibold text-white">0.01°/s</div>
+              Дрейф гироскопа
+            </div>
+            <div>
+              <div class="text-2xl font-semibold text-white">0.1 mg</div>
+              Шум акселерометра
+            </div>
+            <div>
+              <div class="text-2xl font-semibold text-white">-40…+85°C</div>
+              Рабочий диапазон
+            </div>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="relative rounded-2xl border border-white/10 bg-white/5 p-4 shadow-glow">
+            <img src="{{ url_for('static', filename='assets/mvp.jpg') }}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='assets/mvp.png') }}'" alt="IMU MVP" class="rounded-lg object-contain w-full h-[360px]"/>
+            <div class="absolute -top-3 -left-3 bg-ink-500 text-xs px-3 py-1 rounded-full shadow-glow">IMU Series</div>
+            <div class="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-3">
+              <div class="rounded-lg bg-black/50 backdrop-blur px-3 py-2 text-xs">EMI защищено</div>
+              <div class="rounded-lg bg-black/50 backdrop-blur px-3 py-2 text-xs">UART</div>
+              <div class="rounded-lg bg-black/50 backdrop-blur px-3 py-2 text-xs">MVP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div class="text-ink-300 text-sm mb-2">Точность</div>
+          <h3 class="text-xl font-semibold mb-3">Калибровка на стендах</h3>
+          <p class="text-white/70 text-sm">Многоступенчатая температурная калибровка и компенсация нелинейностей для стабильной работы во всём диапазоне.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div class="text-ink-300 text-sm mb-2">Надежность</div>
+          <h3 class="text-xl font-semibold mb-3">Промышленный стандарт</h3>
+          <p class="text-white/70 text-sm">Устойчивость к вибрациям, защитные покрытия, тестирование на отказ — серия для тяжелых условий.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div class="text-ink-300 text-sm mb-2">Интеграция</div>
+          <h3 class="text-xl font-semibold mb-3">Чистые интерфейсы</h3>
+          <p class="text-white/70 text-sm">Поддержка SPI, UART, CAN. Настройка опредленного протокола</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8" data-aos="fade-up">
+        <h2 class="text-2xl font-semibold">Для отраслей</h2>
+        <p class="text-white/60 mt-2">Робототехника, БПЛА, машиностроение, навигация, стабилизация платформ.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">Робототехника</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">БПЛА</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">AR/VR</div>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">Навигация</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVP Showcase -->
+  <section class="py-10 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-2xl font-semibold">Наш MVP</h2>
+          <p class="text-white/70 mt-3">Разарботан прототип IMU для реализации на акселераторе 2025 год. </p>
+          <div class="mt-6 flex gap-3">
+            <a href="/products" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ink-500 hover:bg-ink-600 shadow-glow">Смотреть линейку</a>
+            <a href="/contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10">Обсудить проект</a>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+            <img src="{{ url_for('static', filename='assets/mvp.jpg') }}" onerror="this.onerror=null;this.src='{{ url_for('static', filename='assets/mvp.png') }}'" alt="MVP" class="w-full h-[420px] object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl border border-white/10 bg-gradient-to-r from-ink-600 to-ink-500 p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6" data-aos="zoom-in">
+        <div>
+          <h3 class="text-2xl font-semibold">Нужна оценка проекта или образцы?</h3>
+          <p class="text-white/80 mt-1">Расскажите задачу — подберем IMU, предоставим ТХ и сроки.</p>
+        </div>
+        <a href="/contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-night font-medium hover:bg-white/90 transition">Связаться</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
