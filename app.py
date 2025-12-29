@@ -39,11 +39,11 @@ def create_app() -> Flask:
                 "Рабочая температура": "-40…+85 °C",
             },
             "images": [
-                "/static/assets/imu1.jpg",
-                "/static/assets/imu2.jpg",
-                 "/static/assets/imu3.jpg",
-                "/static/assets/imu4.jpg",
-                 "/static/assets/imu5.jpg"
+                "/static/assets/BCHE-1/imu1.jpg",
+                "/static/assets/BCHE-1/imu2.jpg",
+                 "/static/assets/BCHE-1/imu3.jpg",
+                "/static/assets/BCHE-1/imu4.jpg",
+                 "/static/assets/BCHE-1/imu5.jpg"
             ],
             "datasheet": "БЧЭ 1.pdf",
             "model3d": None,  # Например: "bche1.gltf" или "bche1.glb" - файл должен быть в static/models/
