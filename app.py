@@ -40,7 +40,7 @@ def create_app() -> Flask:
             },
             "images": [
                 "/static/assets/BCHE-1/imu1.jpg",
-                "/static/assets/BCHE-1/imu2.jpg",
+                "/static/assets/BCHE-1/imu2.png",
 
             ],
             "datasheet": "БЧЭ 1.pdf",
