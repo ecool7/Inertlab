@@ -41,9 +41,7 @@ def create_app() -> Flask:
             "images": [
                 "/static/assets/BCHE-1/imu1.jpg",
                 "/static/assets/BCHE-1/imu2.jpg",
-                 "/static/assets/BCHE-1/imu3.jpg",
-                "/static/assets/BCHE-1/imu4.jpg",
-                 "/static/assets/BCHE-1/imu5.jpg"
+
             ],
             "datasheet": "БЧЭ 1.pdf",
             "model3d": None,  # Например: "bche1.gltf" или "bche1.glb" - файл должен быть в static/models/
