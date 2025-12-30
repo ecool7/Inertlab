@@ -43,7 +43,7 @@ def create_app() -> Flask:
                 "/static/assets/BCHE-1/imu2.png",
 
             ],
-            "datasheet": "БЧЭ 1.pdf",
+            "datasheet": "БЧЭ-1.pdf",
             "model3d": None,  # Например: "bche1.gltf" или "bche1.glb" - файл должен быть в static/models/
         }
         
